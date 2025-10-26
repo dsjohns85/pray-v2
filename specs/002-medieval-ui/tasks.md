@@ -94,16 +94,16 @@ Polish & Cross-Cutting (Final Phase)
 
 ### Implementation Tasks
 
-- [ ] T015 [US1] Implement initAnimations() function in docs/animations.js to detect user preferences
-- [ ] T016 [US1] Implement getAnimationConfig() getter function in docs/animations.js
-- [ ] T017 [US1] Implement transitionToPage() core WAAPI animation in docs/animations.js
-- [ ] T018 [US1] Add page transition event emitters (pageTransitionStart, pageTransitionEnd) in docs/animations.js
-- [ ] T019 [US1] Implement animation queueing logic for rapid navigation in docs/animations.js
-- [ ] T020 [US1] Add will-change performance hints and cleanup in docs/animations.js
-- [ ] T021 [US1] Import animations.js module at top of docs/app.js
-- [ ] T022 [US1] Call initAnimations() in app initialization function in docs/app.js
-- [ ] T023 [US1] Replace existing section navigation with transitionToPage() calls in docs/app.js
-- [ ] T024 [US1] Add CSS support styles (.section display rules) in docs/medieval.css
+- [X] T015 [US1] Implement initAnimations() function in docs/animations.js to detect user preferences
+- [X] T016 [US1] Implement getAnimationConfig() getter function in docs/animations.js
+- [X] T017 [US1] Implement transitionToPage() core WAAPI animation in docs/animations.js
+- [X] T018 [US1] Add page transition event emitters (pageTransitionStart, pageTransitionEnd) in docs/animations.js
+- [X] T019 [US1] Implement animation queueing logic for rapid navigation in docs/animations.js
+- [X] T020 [US1] Add will-change performance hints and cleanup in docs/animations.js
+- [X] T021 [US1] Import animations.js module at top of docs/app.js
+- [X] T022 [US1] Call initAnimations() in app initialization function in docs/app.js
+- [X] T023 [US1] Replace existing section navigation with transitionToPage() calls in docs/app.js
+- [X] T024 [US1] Add CSS support styles (.section display rules) in docs/medieval.css
 
 ### Manual Testing Tasks
 

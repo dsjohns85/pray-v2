@@ -150,4 +150,58 @@
   transition: opacity var(--quick-transition) ease;
 }
 
+/* ========================================================================
+   Illuminated Initial Capitals
+   ======================================================================== */
+
+.illuminated-capital {
+  /* Size - responsive scaling */
+  font-size: var(--illuminated-capital-size);
+  font-size: clamp(3rem, 8vw, 5rem);
+  
+  /* Typography */
+  font-family: 'UnifrakturMaguntia', 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  line-height: 0.8;
+  
+  /* Layout */
+  float: left;
+  margin-right: 0.15em;
+  margin-top: 0.1em;
+  margin-bottom: -0.1em;
+  
+  /* Color - set inline via JavaScript from palette */
+  /* Default fallback color */
+  color: var(--medieval-gold);
+  
+  /* Visual enhancement */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  
+  /* Prevent text selection on decorative element */
+  user-select: none;
+}
+
+/* Responsive scaling for small screens */
+@media (max-width: 600px) {
+  .illuminated-capital {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    margin-right: 0.1em;
+  }
+}
+
+/* High contrast mode - simplify */
+@media (prefers-contrast: high) {
+  .illuminated-capital {
+    text-shadow: none;
+    color: inherit;
+    font-weight: 900;
+  }
+}
+
+/* Ensure text flows properly around capital */
+.illuminated-capital + * {
+  display: inline;
+}
+
+
 
