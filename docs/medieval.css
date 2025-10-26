@@ -1,0 +1,132 @@
+/**
+ * Medieval Prayer Book UI Enhancement - Main Stylesheet
+ * Feature: 002-medieval-ui
+ * Purpose: 15th-century inspired aesthetics for Luther Prayer Guide
+ */
+
+/* ========================================================================
+   CSS Custom Properties - Medieval Color Palette & Theme Foundation
+   ======================================================================== */
+
+:root {
+  /* Historical Pigment Colors (inspired by 15th-century manuscripts) */
+  --medieval-gold: #D4AF37;
+  --medieval-blue: #1E3A8A;        /* Ultramarine blue */
+  --medieval-red: #E63946;          /* Vermillion red */
+  --medieval-green: #2D6A4F;        /* Verdigris green */
+  --medieval-brown: #6C4E31;        /* Organic brown */
+  
+  /* Parchment/Vellum Colors */
+  --parchment-base: #F4ECD8;        /* Natural vellum cream */
+  --parchment-aged: #E8DCC4;        /* Aged parchment */
+  --vellum-highlight: #FFF8DC;      /* Cornsilk highlight */
+  --parchment-shadow: rgba(0, 0, 0, 0.05);
+  
+  /* Text Colors (WCAG AA Compliant) */
+  --text-body: #2B1810;             /* Dark brown (>4.5:1 on parchment) */
+  --text-heading: #1A1A1A;          /* Near black (>7:1 on parchment) */
+  --text-muted: #5C4033;            /* Muted brown */
+  
+  /* Animation Timing Variables */
+  --page-turn-duration: 1000ms;     /* Contemplative 1 second */
+  --transition-easing: cubic-bezier(0.4, 0.0, 0.2, 1); /* Material ease-in-out */
+  --quick-transition: 300ms;
+  --slow-transition: 1200ms;
+  
+  /* Responsive Breakpoints */
+  --mobile-breakpoint: 600px;
+  --tablet-breakpoint: 900px;
+  
+  /* Spacing & Layout */
+  --illuminated-capital-size: clamp(3rem, 8vw, 5rem);
+  --border-decoration-width: 60px;
+}
+
+/* ========================================================================
+   Accessibility: Reduced Motion Preference
+   ======================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --page-turn-duration: 0ms;      /* Instant transitions */
+    --quick-transition: 0ms;
+    --slow-transition: 0ms;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================================================
+   Accessibility: High Contrast Preference
+   ======================================================================== */
+
+@media (prefers-contrast: high) {
+  :root {
+    --parchment-base: white;
+    --text-body: black;
+    --text-heading: black;
+  }
+  
+  body {
+    background-image: none !important;
+  }
+}
+
+/* ========================================================================
+   Accessibility: Dark Mode Support
+   ======================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --parchment-base: #2C2416;      /* Dark parchment */
+    --parchment-aged: #1A1410;
+    --vellum-highlight: #3A3020;
+    --parchment-shadow: rgba(0, 0, 0, 0.3);
+    
+    --text-body: #E8DCC4;           /* Light on dark */
+    --text-heading: #FFF8DC;
+    --text-muted: #B8A890;
+    
+    --medieval-gold: #B8950F;       /* Dimmed gold for dark mode */
+    --medieval-blue: #4A6FA5;
+    --medieval-red: #C44854;
+  }
+}
+
+/* ========================================================================
+   Utility Classes
+   ======================================================================== */
+
+/* Screen reader only text (visually hidden, but accessible) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to main content link (for keyboard navigation) */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--medieval-gold);
+  color: var(--text-heading);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
