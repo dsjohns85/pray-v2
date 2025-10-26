@@ -101,6 +101,9 @@ export async function loadDecorationsForScreen(screenElement, decorationType = '
  */
 async function loadSVGDecoration(filename, position) {
   const response = await fetch(decorationConfig.assetPath + filename);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch SVG decoration "${filename}" (status: ${response.status})`);
+  }
   const svgText = await response.text();
   
   // Create wrapper div

@@ -201,24 +201,27 @@ async function executeTransition(fromElement, toElement, direction, duration) {
   const exitAngle = direction === 'forward' ? -15 : 15;
   const enterAngle = direction === 'forward' ? 15 : -15;
   
+  // Note: The perspective value here (1200px) matches the CSS 'perspective: 1200px' for visual consistency.
+  const perspectiveValue = '1200px';
+
   const exitKeyframes = [
     { 
-      transform: 'perspective(2000px) rotateY(0deg) scale(1)', 
+      transform: `perspective(${perspectiveValue}) rotateY(0deg) scale(1)`, 
       opacity: 1 
     },
     { 
-      transform: `perspective(2000px) rotateY(${exitAngle}deg) scale(0.95)`, 
+      transform: `perspective(${perspectiveValue}) rotateY(${exitAngle}deg) scale(0.95)`, 
       opacity: 0 
     }
   ];
   
   const enterKeyframes = [
     { 
-      transform: `perspective(2000px) rotateY(${enterAngle}deg) scale(0.95)`, 
+      transform: `perspective(${perspectiveValue}) rotateY(${enterAngle}deg) scale(0.95)`, 
       opacity: 0 
     },
     { 
-      transform: 'perspective(2000px) rotateY(0deg) scale(1)', 
+      transform: `perspective(${perspectiveValue}) rotateY(0deg) scale(1)`, 
       opacity: 1 
     }
   ];

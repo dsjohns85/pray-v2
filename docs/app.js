@@ -461,6 +461,11 @@ function determineTransitionDirection(fromScreen, toScreen) {
     
     const fromIndex = screenOrder.indexOf(fromScreen);
     const toIndex = screenOrder.indexOf(toScreen);
+
+    // If either screen is not found, default to 'forward'
+    if (fromIndex === -1 || toIndex === -1) {
+        return 'forward';
+    }
     
     // If going back to welcome, it's a back transition
     if (toScreen === elements.welcome) {

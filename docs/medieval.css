@@ -53,7 +53,7 @@
     --slow-transition: 0ms;
   }
   
-  * {
+  .animated {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -156,7 +156,6 @@
 
 .illuminated-capital {
   /* Size - responsive scaling */
-  font-size: var(--illuminated-capital-size);
   font-size: clamp(3rem, 8vw, 5rem);
   
   /* Typography */

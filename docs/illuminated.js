@@ -94,7 +94,7 @@ function createIlluminatedCapital(element, config) {
   
   // Get color from palette (cycle through)
   const color = config.colorPalette[currentColorIndex % config.colorPalette.length];
-  currentColorIndex++;
+  currentColorIndex = (currentColorIndex + 1) % config.colorPalette.length;
   
   // Get the first text node
   const firstTextNode = getFirstTextNode(element);
