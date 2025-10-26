@@ -203,5 +203,72 @@
   display: inline;
 }
 
+/* ========================================================================
+   Aged Parchment Background Theme
+   ======================================================================== */
+
+/* Apply parchment background to body */
+body {
+  background-color: var(--parchment-base);
+  
+  /* Layered background for texture and vignette effect */
+  background-image:
+    /* SVG noise filter for parchment texture */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E"),
+    /* Radial gradient for vignette (darker edges) */
+    radial-gradient(ellipse at center, transparent 0%, rgba(108, 78, 49, 0.08) 100%);
+  
+  /* Blend mode for subtle layering */
+  background-blend-mode: multiply, normal;
+  
+  /* Background settings */
+  background-attachment: fixed;
+  background-size: 300px 300px, cover;
+  background-position: center center;
+  
+  /* Text color for readability on parchment */
+  color: var(--text-body);
+}
+
+/* Update text colors for WCAG AA contrast on parchment */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+}
+
+p, li, span {
+  color: var(--text-body);
+}
+
+.text-muted, .instruction {
+  color: var(--text-muted);
+}
+
+/* Dark mode parchment adjustments */
+@media (prefers-color-scheme: dark) {
+  body {
+    /* Darker parchment texture for dark mode */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  }
+}
+
+/* High contrast mode - remove texture */
+@media (prefers-contrast: high) {
+  body {
+    background-image: none;
+    background-color: var(--parchment-base);
+  }
+}
+
+/* Print styles - remove background for printing */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+
 
 

@@ -133,15 +133,15 @@ Polish & Cross-Cutting (Final Phase)
 
 ### Implementation Tasks
 
-- [ ] T031 [P] [US2] Implement processIlluminatedCapitals() core function in docs/illuminated.js
-- [ ] T032 [P] [US2] Add color palette cycling logic in docs/illuminated.js
-- [ ] T033 [P] [US2] Implement removeIlluminatedCapitals() cleanup function in docs/illuminated.js
-- [ ] T034 [P] [US2] Add .illuminated-capital CSS styles (size, float, colors) in docs/medieval.css
-- [ ] T035 [P] [US2] Add responsive scaling (clamp() for font-size) in docs/medieval.css
-- [ ] T036 [US2] Import illuminated.js module at top of docs/app.js
-- [ ] T037 [US2] Call processIlluminatedCapitals() on Welcome screen load in docs/app.js
-- [ ] T038 [US2] Call processIlluminatedCapitals() after each page transition in docs/app.js
-- [ ] T039 [US2] Add aria-hidden attributes to decorative capitals in docs/illuminated.js
+- [X] T031 [P] [US2] Implement processIlluminatedCapitals() core function in docs/illuminated.js
+- [X] T032 [P] [US2] Add color palette cycling logic in docs/illuminated.js
+- [X] T033 [P] [US2] Implement removeIlluminatedCapitals() cleanup function in docs/illuminated.js
+- [X] T034 [P] [US2] Add .illuminated-capital CSS styles (size, float, colors) in docs/medieval.css
+- [X] T035 [P] [US2] Add responsive scaling (clamp() for font-size) in docs/medieval.css
+- [X] T036 [US2] Import illuminated.js module at top of docs/app.js
+- [X] T037 [US2] Call processIlluminatedCapitals() on Welcome screen load in docs/app.js
+- [X] T038 [US2] Call processIlluminatedCapitals() after each page transition in docs/app.js
+- [X] T039 [US2] Add aria-hidden attributes to decorative capitals in docs/illuminated.js
 
 ### Manual Testing Tasks
 
