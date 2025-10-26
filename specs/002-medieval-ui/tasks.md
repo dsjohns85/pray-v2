@@ -73,12 +73,12 @@ Polish & Cross-Cutting (Final Phase)
 
 **Tasks**:
 
-- [ ] T009 [P] Define CSS custom properties for medieval color palette in docs/medieval.css
-- [ ] T010 [P] Define CSS custom properties for animation timing variables in docs/medieval.css
-- [ ] T011 [P] Add accessibility media queries (prefers-reduced-motion, prefers-contrast, prefers-color-scheme) in docs/medieval.css
-- [ ] T012 [P] Create .visually-hidden utility class for screen reader text in docs/medieval.css
+- [X] T009 [P] Define CSS custom properties for medieval color palette in docs/medieval.css
+- [X] T010 [P] Define CSS custom properties for animation timing variables in docs/medieval.css
+- [X] T011 [P] Add accessibility media queries (prefers-reduced-motion, prefers-contrast, prefers-color-scheme) in docs/medieval.css
+- [X] T012 [P] Create .visually-hidden utility class for screen reader text in docs/medieval.css
 - [ ] T013 Test CSS variables render correctly and accessibility queries respond to system preferences
-- [ ] T014 Commit Phase 2 foundational CSS with message "feat: add medieval CSS theme foundation"
+- [X] T014 Commit Phase 2 foundational CSS with message "feat: add medieval CSS theme foundation"
 
 **Completion Criteria**: CSS theme foundation works, variables accessible, accessibility preferences respected.
 

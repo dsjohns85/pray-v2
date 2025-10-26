@@ -130,3 +130,24 @@
   top: 0;
 }
 
+/* ========================================================================
+   Page Transition Support Styles
+   ======================================================================== */
+
+/* Ensure sections are positioned for animations */
+.section {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Hidden sections should not be visible or interactive */
+.section:not(.active) {
+  display: none;
+}
+
+/* Smooth transitions for opacity changes */
+.section {
+  transition: opacity var(--quick-transition) ease;
+}
+
+
