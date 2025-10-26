@@ -241,18 +241,18 @@ Polish & Cross-Cutting (Final Phase)
 
 ### Implementation Tasks
 
-- [ ] T073 [P] [US5] Design and create corner flourish SVG (4 variations) in docs/assets/decorations/
-- [ ] T074 [P] [US5] Design and create edge ornament SVGs (horizontal/vertical) in docs/assets/decorations/
-- [ ] T075 [P] [US5] Optimize SVG files for web (remove unnecessary metadata) in docs/assets/decorations/
-- [ ] T076 [P] [US5] Implement loadDecorationsForScreen() function in docs/decorations.js
-- [ ] T077 [P] [US5] Implement removeDecorations() cleanup function in docs/decorations.js
-- [ ] T078 [P] [US5] Add .decorative-border CSS positioning rules in docs/medieval.css
-- [ ] T079 [P] [US5] Add responsive display rules (hide on mobile <600px) in docs/medieval.css
-- [ ] T080 [P] [US5] Add aria-hidden="true" to all decorative SVG elements in docs/decorations.js
-- [ ] T081 [US5] Import decorations.js module in docs/app.js
-- [ ] T082 [US5] Load decorations on welcome screen in docs/app.js
-- [ ] T083 [US5] Load decorations on amen screen transition in docs/app.js
-- [ ] T084 [US5] Load decorations on completion screen transition in docs/app.js
+- [X] T073 [P] [US5] Design and create corner flourish SVG (4 variations) in docs/assets/decorations/
+- [X] T074 [P] [US5] Design and create edge ornament SVGs (horizontal/vertical) in docs/assets/decorations/
+- [X] T075 [P] [US5] Optimize SVG files for web (remove unnecessary metadata) in docs/assets/decorations/
+- [X] T076 [P] [US5] Implement loadDecorationsForScreen() function in docs/decorations.js
+- [X] T077 [P] [US5] Implement removeDecorations() cleanup function in docs/decorations.js
+- [X] T078 [P] [US5] Add .decorative-border CSS positioning rules in docs/medieval.css
+- [X] T079 [P] [US5] Add responsive display rules (hide on mobile <600px) in docs/medieval.css
+- [X] T080 [P] [US5] Add aria-hidden="true" to all decorative SVG elements in docs/decorations.js
+- [X] T081 [US5] Import decorations.js module in docs/app.js
+- [X] T082 [US5] Load decorations on welcome screen in docs/app.js
+- [X] T083 [US5] Load decorations on amen screen transition in docs/app.js
+- [X] T084 [US5] Load decorations on completion screen transition in docs/app.js
 
 ### Manual Testing Tasks
 
