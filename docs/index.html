@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A guided prayer experience based on Martin Luther's 'A Simple Way to Pray'">
+    <title>Luther Prayer Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <noscript>
+        <div class="no-js-message">
+            <h1>JavaScript Required</h1>
+            <p>This prayer guide requires JavaScript to provide a guided experience. Please enable JavaScript in your browser settings.</p>
+        </div>
+    </noscript>
+
+    <div id="app" class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome" class="section active">
+            <div class="content-wrapper">
+                <h1>Luther Prayer Guide</h1>
+                <p class="intro">Welcome to a guided prayer experience based on Martin Luther's "A Simple Way to Pray" (1535).</p>
+                <p>This guide will walk you through:</p>
+                <ul>
+                    <li>The Seven Petitions of the Lord's Prayer</li>
+                    <li>The Ten Commandments (optional)</li>
+                    <li>The Apostle's Creed (optional)</li>
+                </ul>
+                <p class="instruction">Take your time with each section. There are no time limits.</p>
+                <button id="start-button" class="primary-button">Begin Prayer</button>
+            </div>
+        </div>
+
+        <!-- Content Display Area -->
+        <div id="content" class="section">
+            <div class="content-wrapper">
+                <h2 id="content-title"></h2>
+                <div id="content-text"></div>
+            </div>
+        </div>
+
+        <!-- Amen Screen -->
+        <div id="amen-screen" class="section">
+            <div class="content-wrapper">
+                <h2>Amen</h2>
+                <div id="amen-text"></div>
+                <div class="button-group">
+                    <button id="continue-commandments" class="primary-button">Continue to Commandments</button>
+                    <button id="end-from-amen" class="secondary-button">End Session</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Commandments End Screen -->
+        <div id="commandments-end" class="section">
+            <div class="content-wrapper">
+                <h2>Commandments Complete</h2>
+                <p>You have completed the Ten Commandments with the four-stranded garland method.</p>
+                <div class="button-group">
+                    <button id="continue-creed" class="primary-button">Continue to Creed</button>
+                    <button id="end-from-commandments" class="secondary-button">End Session</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="section">
+            <div class="content-wrapper">
+                <h2>Prayer Complete</h2>
+                <p id="completion-message">Thank you for praying with Luther's guide.</p>
+                <div class="button-group">
+                    <button id="restart-button" class="primary-button">Start New Session</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div id="nav-controls" class="nav-controls">
+            <button id="next-button" class="primary-button">Next</button>
+            <button id="end-session-button" class="secondary-button">End Session</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

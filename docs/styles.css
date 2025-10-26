@@ -1,0 +1,267 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    background-color: #fafafa;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.75em;
+    color: #34495e;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.intro {
+    font-size: 1.1em;
+    text-align: center;
+    color: #555;
+}
+
+.instruction {
+    font-style: italic;
+    text-align: center;
+    color: #666;
+    margin-top: 1.5em;
+}
+
+ul {
+    margin: 1.5em 0;
+    padding-left: 2em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Sections */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Buttons */
+button {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.primary-button {
+    background-color: #4a5568;
+    color: #fff;
+}
+
+.primary-button:hover {
+    background-color: #2d3748;
+}
+
+.primary-button:active {
+    transform: translateY(1px);
+}
+
+.secondary-button {
+    background-color: #cbd5e0;
+    color: #2d3748;
+}
+
+.secondary-button:hover {
+    background-color: #a0aec0;
+}
+
+.secondary-button:active {
+    transform: translateY(1px);
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 2em;
+    flex-wrap: wrap;
+}
+
+/* Navigation Controls */
+.nav-controls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 12px;
+    z-index: 100;
+}
+
+.nav-controls.active {
+    display: flex;
+}
+
+/* Content Display */
+#content-text {
+    font-size: 1.05em;
+    white-space: pre-wrap;
+}
+
+.petition-text {
+    font-size: 1.3em;
+    font-weight: 600;
+    text-align: center;
+    margin: 2em 0;
+    color: #2c3e50;
+}
+
+.meditation-text,
+.garland-text {
+    margin: 1.5em 0;
+}
+
+.garland-label {
+    font-weight: 600;
+    color: #34495e;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+/* No JavaScript Message */
+.no-js-message {
+    text-align: center;
+    padding: 40px;
+    max-width: 600px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-js-message h1 {
+    color: #e53e3e;
+    margin-bottom: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .content-wrapper {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .nav-controls {
+        bottom: 20px;
+        flex-direction: column;
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .nav-controls button {
+        width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .content-wrapper {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.75em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* Focus Styles for Keyboard Navigation */
+button:focus,
+button:focus-visible {
+    outline: 3px solid #4299e1;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .nav-controls,
+    .button-group {
+        display: none;
+    }
+
+    body {
+        background-color: #fff;
+    }
+
+    .content-wrapper {
+        box-shadow: none;
+    }
+}
