@@ -205,14 +205,14 @@ Polish & Cross-Cutting (Final Phase)
 
 ### Implementation Tasks
 
-- [ ] T059 [P] [US4] Add Google Fonts preconnect links in docs/index.html head
-- [ ] T060 [P] [US4] Load UnifrakturMaguntia font for headings in docs/index.html
-- [ ] T061 [P] [US4] Load Crimson Pro font for body text in docs/index.html
-- [ ] T062 [P] [US4] Add font-family rules for headings (h1, h2, h3) in docs/medieval.css
-- [ ] T063 [P] [US4] Add font-family rules for body text (p, li) in docs/medieval.css
-- [ ] T064 [P] [US4] Configure font-display: swap for progressive enhancement in docs/medieval.css
-- [ ] T065 [P] [US4] Add font-weight and line-height adjustments in docs/medieval.css
-- [ ] T066 [US4] Add fallback font stack (Georgia, serif) in docs/medieval.css
+- [X] T059 [P] [US4] Add Google Fonts preconnect links in docs/index.html head
+- [X] T060 [P] [US4] Load UnifrakturMaguntia font for headings in docs/index.html
+- [X] T061 [P] [US4] Load Crimson Pro font for body text in docs/index.html
+- [X] T062 [P] [US4] Add font-family rules for headings (h1, h2, h3) in docs/medieval.css
+- [X] T063 [P] [US4] Add font-family rules for body text (p, li) in docs/medieval.css
+- [X] T064 [P] [US4] Configure font-display: swap for progressive enhancement in docs/medieval.css
+- [X] T065 [P] [US4] Add font-weight and line-height adjustments in docs/medieval.css
+- [X] T066 [US4] Add fallback font stack (Georgia, serif) in docs/medieval.css
 
 ### Manual Testing Tasks
 

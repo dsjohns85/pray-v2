@@ -9,6 +9,7 @@ import { creed } from './content/creed.js';
 // Import medieval UI enhancement modules
 import { initAnimations, transitionToPage } from './animations.js';
 import { processIlluminatedCapitals } from './illuminated.js';
+import { autoLoadDecorations } from './decorations.js';
 
 // Application State
 const appState = {
@@ -71,6 +72,9 @@ async function init() {
         
         // Process illuminated capitals on welcome screen
         processIlluminatedCapitals(elements.welcome);
+        
+        // Load decorations on welcome screen
+        autoLoadDecorations(elements.welcome);
     } catch (error) {
         console.error('Failed to initialize app:', error);
         alert('Failed to load prayer guide. Please refresh the page.');
@@ -431,6 +435,9 @@ async function showScreen(screenName) {
 
     // Process illuminated capitals for the new screen
     processIlluminatedCapitals(nextScreen);
+    
+    // Load decorations for designated screens
+    autoLoadDecorations(nextScreen);
 
     // Scroll to top
     window.scrollTo(0, 0);

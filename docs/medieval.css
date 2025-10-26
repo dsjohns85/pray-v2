@@ -368,6 +368,93 @@ em, i {
   }
 }
 
+/* ========================================================================
+   Decorative Borders and Marginalia
+   ======================================================================== */
+
+/* Container for all decorations on a screen */
+.decorative-border-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Don't block interactions */
+  z-index: 1; /* Behind content but visible */
+}
+
+/* Individual decoration elements */
+.decoration {
+  position: absolute;
+  width: var(--border-decoration-width);
+  height: var(--border-decoration-width);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Corner positions */
+.decoration-tl {
+  top: 1rem;
+  left: 1rem;
+}
+
+.decoration-tr {
+  top: 1rem;
+  right: 1rem;
+}
+
+.decoration-bl {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.decoration-br {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* SVG styling */
+.decoration svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Responsive - hide on mobile */
+@media (max-width: 600px) {
+  .decorative-border-container {
+    display: none;
+  }
+}
+
+/* Tablet - smaller decorations */
+@media (min-width: 601px) and (max-width: 900px) {
+  .decoration {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Ensure sections are positioned for absolute decorations */
+.section {
+  position: relative;
+}
+
+/* High contrast mode - reduce decoration opacity */
+@media (prefers-contrast: high) {
+  .decoration {
+    opacity: 0.3;
+  }
+}
+
+/* Dark mode - adjust decoration visibility */
+@media (prefers-color-scheme: dark) {
+  .decoration {
+    opacity: 0.5;
+  }
+}
+
+
 
 
 
