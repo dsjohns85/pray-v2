@@ -280,10 +280,10 @@ Polish & Cross-Cutting (Final Phase)
 
 ### Integration Tasks
 
-- [ ] T092 [P] Add touch swipe gesture support for mobile page transitions in docs/animations.js
-- [ ] T093 [P] Implement progressive asset loading strategy in docs/medieval.js central coordinator
-- [ ] T094 [P] Add loading state indicators for decorative assets in docs/app.js
-- [ ] T095 Update docs/index.html with medieval-themed meta description
+- [X] T092 [P] Add touch swipe gesture support for mobile page transitions in docs/animations.js
+- [X] T093 [P] Implement progressive asset loading strategy in docs/medieval.js central coordinator
+- [X] T094 [P] Add loading state indicators for decorative assets in docs/app.js
+- [X] T095 Update docs/index.html with medieval-themed meta description
 - [ ] T096 Add medieval theme toggle (future: optional user preference) placeholder in docs/app.js
 
 ### Performance Tasks
@@ -417,24 +417,24 @@ Before marking feature complete, validate all spec requirements:
 
 ### Functional Requirements (from spec.md)
 
-- [ ] FR-001: Smooth page transition animations ✓ (US1)
-- [ ] FR-002: Illuminated capitals on major sections ✓ (US2)
-- [ ] FR-003: Parchment background styling ✓ (US3)
-- [ ] FR-004: Medieval typography ✓ (US4)
-- [ ] FR-005: Decorative borders on key screens ✓ (US5)
-- [ ] FR-006: Respect accessibility preferences ✓ (T011, T013)
-- [ ] FR-007: WCAG AA text readability ✓ (T052, T105)
-- [ ] FR-008: Touch gesture support ✓ (T092)
-- [ ] FR-009: Responsive 320px-4K ✓ (T114, T115)
-- [ ] FR-010: Progressive asset loading ✓ (T093)
+- [X] FR-001: Smooth page transition animations ✓ (US1)
+- [X] FR-002: Illuminated capitals on major sections ✓ (US2)
+- [X] FR-003: Parchment background styling ✓ (US3)
+- [X] FR-004: Medieval typography ✓ (US4)
+- [X] FR-005: Decorative borders on key screens ✓ (US5)
+- [X] FR-006: Respect accessibility preferences ✓ (T011, T013)
+- [X] FR-007: WCAG AA text readability ✓ (T052, T105)
+- [X] FR-008: Touch gesture support ✓ (T092)
+- [X] FR-009: Responsive 320px-4K ✓ (T114, T115)
+- [X] FR-010: Progressive asset loading ✓ (T093)
 
 ### Edge Cases (from spec.md)
 
-- [ ] Reduced motion preferences honored ✓ (T011, T106)
-- [ ] Small screen (320px) handling ✓ (T030, T114)
-- [ ] High contrast mode support ✓ (T051, T106)
-- [ ] Long text handling ✓ (part of responsive testing)
-- [ ] Slow network progressive loading ✓ (T093, T098)
+- [X] Reduced motion preferences honored ✓ (T011, T106)
+- [X] Small screen (320px) handling ✓ (T030, T114)
+- [X] High contrast mode support ✓ (T051, T106)
+- [X] Long text handling ✓ (part of responsive testing)
+- [X] Slow network progressive loading ✓ (T093, T098)
 
 ---
 
