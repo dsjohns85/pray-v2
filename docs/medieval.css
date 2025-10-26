@@ -1,0 +1,460 @@
+/**
+ * Medieval Prayer Book UI Enhancement - Main Stylesheet
+ * Feature: 002-medieval-ui
+ * Purpose: 15th-century inspired aesthetics for Luther Prayer Guide
+ */
+
+/* ========================================================================
+   CSS Custom Properties - Medieval Color Palette & Theme Foundation
+   ======================================================================== */
+
+:root {
+  /* Historical Pigment Colors (inspired by 15th-century manuscripts) */
+  --medieval-gold: #D4AF37;
+  --medieval-blue: #1E3A8A;        /* Ultramarine blue */
+  --medieval-red: #E63946;          /* Vermillion red */
+  --medieval-green: #2D6A4F;        /* Verdigris green */
+  --medieval-brown: #6C4E31;        /* Organic brown */
+  
+  /* Parchment/Vellum Colors */
+  --parchment-base: #F4ECD8;        /* Natural vellum cream */
+  --parchment-aged: #E8DCC4;        /* Aged parchment */
+  --vellum-highlight: #FFF8DC;      /* Cornsilk highlight */
+  --parchment-shadow: rgba(0, 0, 0, 0.05);
+  
+  /* Text Colors (WCAG AA Compliant) */
+  --text-body: #2B1810;             /* Dark brown (>4.5:1 on parchment) */
+  --text-heading: #1A1A1A;          /* Near black (>7:1 on parchment) */
+  --text-muted: #5C4033;            /* Muted brown */
+  
+  /* Animation Timing Variables */
+  --page-turn-duration: 1000ms;     /* Contemplative 1 second */
+  --transition-easing: cubic-bezier(0.4, 0.0, 0.2, 1); /* Material ease-in-out */
+  --quick-transition: 300ms;
+  --slow-transition: 1200ms;
+  
+  /* Responsive Breakpoints */
+  --mobile-breakpoint: 600px;
+  --tablet-breakpoint: 900px;
+  
+  /* Spacing & Layout */
+  --illuminated-capital-size: clamp(3rem, 8vw, 5rem);
+  --border-decoration-width: 60px;
+}
+
+/* ========================================================================
+   Accessibility: Reduced Motion Preference
+   ======================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --page-turn-duration: 0ms;      /* Instant transitions */
+    --quick-transition: 0ms;
+    --slow-transition: 0ms;
+  }
+  
+  .animated {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================================================
+   Accessibility: High Contrast Preference
+   ======================================================================== */
+
+@media (prefers-contrast: high) {
+  :root {
+    --parchment-base: white;
+    --text-body: black;
+    --text-heading: black;
+  }
+  
+  body {
+    background-image: none !important;
+  }
+}
+
+/* ========================================================================
+   Accessibility: Dark Mode Support
+   ======================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --parchment-base: #2C2416;      /* Dark parchment */
+    --parchment-aged: #1A1410;
+    --vellum-highlight: #3A3020;
+    --parchment-shadow: rgba(0, 0, 0, 0.3);
+    
+    --text-body: #E8DCC4;           /* Light on dark */
+    --text-heading: #FFF8DC;
+    --text-muted: #B8A890;
+    
+    --medieval-gold: #B8950F;       /* Dimmed gold for dark mode */
+    --medieval-blue: #4A6FA5;
+    --medieval-red: #C44854;
+  }
+}
+
+/* ========================================================================
+   Utility Classes
+   ======================================================================== */
+
+/* Screen reader only text (visually hidden, but accessible) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to main content link (for keyboard navigation) */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--medieval-gold);
+  color: var(--text-heading);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* ========================================================================
+   Page Transition Support Styles
+   ======================================================================== */
+
+/* Ensure sections are positioned for animations */
+.section {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Hidden sections should not be visible or interactive */
+.section:not(.active) {
+  display: none;
+}
+
+/* Smooth transitions for opacity changes */
+.section {
+  transition: opacity var(--quick-transition) ease;
+}
+
+/* ========================================================================
+   Illuminated Initial Capitals
+   ======================================================================== */
+
+.illuminated-capital {
+  /* Size - responsive scaling */
+  font-size: clamp(3rem, 8vw, 5rem);
+  
+  /* Typography */
+  font-family: 'UnifrakturMaguntia', 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  line-height: 0.8;
+  
+  /* Layout */
+  float: left;
+  margin-right: 0.15em;
+  margin-top: 0.1em;
+  margin-bottom: -0.1em;
+  
+  /* Color - set inline via JavaScript from palette */
+  /* Default fallback color */
+  color: var(--medieval-gold);
+  
+  /* Visual enhancement */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  
+  /* Prevent text selection on decorative element */
+  user-select: none;
+}
+
+/* Responsive scaling for small screens */
+@media (max-width: 600px) {
+  .illuminated-capital {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    margin-right: 0.1em;
+  }
+}
+
+/* High contrast mode - simplify */
+@media (prefers-contrast: high) {
+  .illuminated-capital {
+    text-shadow: none;
+    color: inherit;
+    font-weight: 900;
+  }
+}
+
+/* Ensure text flows properly around capital */
+.illuminated-capital + * {
+  display: inline;
+}
+
+/* ========================================================================
+   Aged Parchment Background Theme
+   ======================================================================== */
+
+/* Apply parchment background to body */
+body {
+  background-color: var(--parchment-base);
+  
+  /* Layered background for texture and vignette effect */
+  background-image:
+    /* SVG noise filter for parchment texture */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E"),
+    /* Radial gradient for vignette (darker edges) */
+    radial-gradient(ellipse at center, transparent 0%, rgba(108, 78, 49, 0.08) 100%);
+  
+  /* Blend mode for subtle layering */
+  background-blend-mode: multiply, normal;
+  
+  /* Background settings */
+  background-attachment: fixed;
+  background-size: 300px 300px, cover;
+  background-position: center center;
+  
+  /* Text color for readability on parchment */
+  color: var(--text-body);
+}
+
+/* Update text colors for WCAG AA contrast on parchment */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+}
+
+p, li, span {
+  color: var(--text-body);
+}
+
+.text-muted, .instruction {
+  color: var(--text-muted);
+}
+
+/* Dark mode parchment adjustments */
+@media (prefers-color-scheme: dark) {
+  body {
+    /* Darker parchment texture for dark mode */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  }
+}
+
+/* High contrast mode - remove texture */
+@media (prefers-contrast: high) {
+  body {
+    background-image: none;
+    background-color: var(--parchment-base);
+  }
+}
+
+/* Print styles - remove background for printing */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* ========================================================================
+   Medieval Typography Enhancement
+   ======================================================================== */
+
+/* Headings - Medieval-inspired font */
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: 'UnifrakturMaguntia', 'Cinzel', 'Crimson Pro', Georgia, serif;
+  color: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+/* Main heading sizes */
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: 0.75rem;
+}
+
+/* Body text - Readable serif font */
+body, p, li, span, div {
+  font-family: 'Crimson Pro', 'Crimson Text', 'Libre Baskerville', Georgia, serif;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Improve readability */
+p {
+  margin-bottom: 1em;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+li {
+  margin-bottom: 0.5em;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+/* Emphasis text */
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* Labels and metadata */
+.garland-label, .instruction {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* Fallback for browsers without font support */
+.no-webfont h1, 
+.no-webfont h2, 
+.no-webfont h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: bold;
+}
+
+.no-webfont body,
+.no-webfont p,
+.no-webfont li {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* High contrast mode - ensure readability */
+@media (prefers-contrast: high) {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+  }
+  
+  body, p, li {
+    font-weight: 500;
+  }
+}
+
+/* User text size preferences */
+@media (prefers-reduced-motion: reduce) {
+  /* Smooth font scaling without animation */
+  * {
+    font-size: inherit !important;
+  }
+}
+
+/* ========================================================================
+   Decorative Borders and Marginalia
+   ======================================================================== */
+
+/* Container for all decorations on a screen */
+.decorative-border-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Don't block interactions */
+  z-index: 1; /* Behind content but visible */
+}
+
+/* Individual decoration elements */
+.decoration {
+  position: absolute;
+  width: var(--border-decoration-width);
+  height: var(--border-decoration-width);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Corner positions */
+.decoration-tl {
+  top: 1rem;
+  left: 1rem;
+}
+
+.decoration-tr {
+  top: 1rem;
+  right: 1rem;
+}
+
+.decoration-bl {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.decoration-br {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* SVG styling */
+.decoration svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Responsive - hide on mobile */
+@media (max-width: 600px) {
+  .decorative-border-container {
+    display: none;
+  }
+}
+
+/* Tablet - smaller decorations */
+@media (min-width: 601px) and (max-width: 900px) {
+  .decoration {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Ensure sections are positioned for absolute decorations */
+.section {
+  position: relative;
+}
+
+/* High contrast mode - reduce decoration opacity */
+@media (prefers-contrast: high) {
+  .decoration {
+    opacity: 0.3;
+  }
+}
+
+/* Dark mode - adjust decoration visibility */
+@media (prefers-color-scheme: dark) {
+  .decoration {
+    opacity: 0.5;
+  }
+}
+
+
+
+
+
+

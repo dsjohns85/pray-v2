@@ -15,3 +15,13 @@ Thumbs.db
 .env
 .env.local
 .env*.local
+
+# JavaScript/Node.js (if used for tooling)
+node_modules/
+dist/
+build/
+coverage/
+
+# Build artifacts
+*.min.js
+*.min.css
