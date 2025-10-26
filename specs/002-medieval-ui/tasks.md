@@ -170,13 +170,13 @@ Polish & Cross-Cutting (Final Phase)
 
 ### Implementation Tasks
 
-- [ ] T046 [P] [US3] Add parchment base color to body background in docs/medieval.css
-- [ ] T047 [P] [US3] Create inline SVG noise filter for parchment texture in docs/medieval.css
-- [ ] T048 [P] [US3] Add radial gradient vignette effect in docs/medieval.css
-- [ ] T049 [P] [US3] Configure background-blend-mode for layered effect in docs/medieval.css
-- [ ] T050 [P] [US3] Add dark mode parchment colors in @media (prefers-color-scheme: dark) in docs/medieval.css
-- [ ] T051 [P] [US3] Remove parchment texture in high contrast mode in docs/medieval.css
-- [ ] T052 [US3] Update text colors to ensure WCAG AA contrast on parchment in docs/medieval.css
+- [X] T046 [P] [US3] Add parchment base color to body background in docs/medieval.css
+- [X] T047 [P] [US3] Create inline SVG noise filter for parchment texture in docs/medieval.css
+- [X] T048 [P] [US3] Add radial gradient vignette effect in docs/medieval.css
+- [X] T049 [P] [US3] Configure background-blend-mode for layered effect in docs/medieval.css
+- [X] T050 [P] [US3] Add dark mode parchment colors in @media (prefers-color-scheme: dark) in docs/medieval.css
+- [X] T051 [P] [US3] Remove parchment texture in high contrast mode in docs/medieval.css
+- [X] T052 [US3] Update text colors to ensure WCAG AA contrast on parchment in docs/medieval.css
 
 ### Manual Testing Tasks
 

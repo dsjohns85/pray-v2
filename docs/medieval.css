@@ -269,6 +269,106 @@ p, li, span {
   }
 }
 
+/* ========================================================================
+   Medieval Typography Enhancement
+   ======================================================================== */
+
+/* Headings - Medieval-inspired font */
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: 'UnifrakturMaguntia', 'Cinzel', 'Crimson Pro', Georgia, serif;
+  color: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+/* Main heading sizes */
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: 0.75rem;
+}
+
+/* Body text - Readable serif font */
+body, p, li, span, div {
+  font-family: 'Crimson Pro', 'Crimson Text', 'Libre Baskerville', Georgia, serif;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Improve readability */
+p {
+  margin-bottom: 1em;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+li {
+  margin-bottom: 0.5em;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+/* Emphasis text */
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* Labels and metadata */
+.garland-label, .instruction {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* Fallback for browsers without font support */
+.no-webfont h1, 
+.no-webfont h2, 
+.no-webfont h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: bold;
+}
+
+.no-webfont body,
+.no-webfont p,
+.no-webfont li {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* High contrast mode - ensure readability */
+@media (prefers-contrast: high) {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+  }
+  
+  body, p, li {
+    font-weight: 500;
+  }
+}
+
+/* User text size preferences */
+@media (prefers-reduced-motion: reduce) {
+  /* Smooth font scaling without animation */
+  * {
+    font-size: inherit !important;
+  }
+}
+
+
 
 
 
