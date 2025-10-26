@@ -30,29 +30,110 @@ This project implements Luther's "A Simple Way to Pray" (1535) as an interactive
 
 ## Quick Start
 
-### Local Development
+### Development Options
 
-1. Clone the repository:
+#### Option 1: GitHub Codespaces (Recommended)
+
+This repository uses the official **[javascript-node](https://github.com/devcontainers/templates/tree/main/src/javascript-node)** devcontainer template from GitHub with Python added for serving static files.
+
+**What's included out-of-the-box:**
+- ✅ Node.js 22 (LTS) with npm, yarn, and nvm
+- ✅ Python 3.13 for serving static files
+- ✅ Git, zsh, and Oh My Zsh pre-configured
+- ✅ ESLint for JavaScript/HTML linting
+- ✅ GitHub Copilot extension enabled
+- ✅ Live Server extension for instant preview
+- ✅ spec-kit (specify CLI) for Specification-Driven Development
+
+**To get started:**
+
+1. Click the "Code" button in GitHub and select "Open with Codespaces"
+2. Codespaces will launch and automatically set up everything (~2-3 minutes first time)
+3. Start developing immediately - no manual setup required
+4. To preview the app:
+   ```bash
+   cd docs
+   python3 -m http.server 8000
+   ```
+   Then open the forwarded port in Codespaces or use the Live Server extension.
+
+#### Option 2: Local Development
+
+1. **Prerequisites:**
+   - Python 3.11+ (for spec-kit)
+   - Git
+   - A web browser
+
+2. **Clone and setup:**
    ```bash
    git clone <repository-url>
    cd pray-v2
    ```
 
-2. Start a local web server:
+3. **Install spec-kit (optional but recommended):**
+   ```bash
+   pipx install git+https://github.com/github/spec-kit.git
+   specify check  # Verify your development environment
+   ```
+
+4. **Start local development:**
    ```bash
    cd docs
    python3 -m http.server 8000
    ```
 
-3. Open `http://localhost:8000` in your browser
+5. **Open `http://localhost:8000` in your browser**
 
-### Deployment
+## Development Workflow Integration
 
-This project is configured for GitHub Pages deployment:
+### Spec-Driven Development with spec-kit
 
-1. Enable GitHub Pages in repository settings
-2. Set source to `/docs` folder on your branch
-3. Push changes to deploy automatically
+This project follows [GitHub's spec-kit](https://github.com/github/spec-kit) **Specification-Driven Development (SDD)** methodology:
+
+**What is Spec-Driven Development?**
+- **Specifications become executable** - write specs first, generate code from them
+- **Intent-driven development** - define the "what" before the "how"  
+- **Iterative refinement** - multi-step specification → plan → tasks → implementation
+- **AI-powered generation** - use AI agents (like GitHub Copilot) to generate code from specs
+
+**How this project uses SDD:**
+- Feature specifications in `specs/001-luther-prayer-guide/` directory
+- Structured spec files: `spec.md`, `plan.md`, `tasks.md`, `research.md`
+- Clear separation between specification (what to build) and implementation (how it's built)
+
+#### Using Spec-Kit in This Project
+
+The `specify` CLI provides commands for spec-driven workflows:
+
+```bash
+# Initialize a new feature specification
+/speckit.specify <feature description>
+
+# Generate implementation plan from spec
+/speckit.plan <technical requirements>
+
+# Break down plan into actionable tasks
+/speckit.tasks
+
+# Execute implementation
+/speckit.implement
+```
+
+For this project's existing features, see the `specs/` directory for complete specifications.
+
+Learn more: [Spec-Driven Development Methodology](https://github.com/github/spec-kit/blob/main/spec-driven.md)
+
+### GitHub Copilot Integration
+
+- **Pre-enabled in Codespaces** - AI-powered code suggestions
+- **Context-aware** - understands project structure and specifications
+- **Works with spec-kit** - can help implement from specifications
+
+### Quality Assurance
+
+- **Specification-first** - changes documented in specs before implementation
+- **Automated validation** - GitHub Actions ensure spec-kit compatibility
+- **Manual testing** - checklists in `specs/` directory
 
 ## Project Structure
 

@@ -1,0 +1,33 @@
+{
+  "name": "Pray V2 - Luther Prayer Guide Development",
+  // Official devcontainers template: javascript-node
+  // Includes Node.js, eslint, nvm, yarn, git, zsh, and Oh My Zsh
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  
+  // Add Python for serving static files with `python3 -m http.server`
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.13"
+    },
+    "ghcr.io/astral-sh/devcontainers/features/uv:1": {}
+  },
+  
+  "forwardPorts": [8000],
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-vscode.live-server"
+      ],
+      "settings": {
+        "git.autofetch": true
+      }
+    }
+  }
+}
